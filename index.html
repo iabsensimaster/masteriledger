@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-Ledger - Tambah Data</title>
+</head>
+<body>
+    <h1>Form Input i-Ledger</h1>
+    <form id="ledger-form">
+        <label>Nama:</label><br>
+        <input type="text" id="nama" required><br><br>
+
+        <label>Uraian:</label><br>
+        <input type="text" id="uraian" required><br><br>
+
+        <label>Pos:</label><br>
+        <input type="text" id="pos" required><br><br>
+
+        <label>Nominal:</label><br>
+        <input type="number" id="nominal" required><br><br>
+
+        <label>Foto Nota:</label><br>
+        <input type="file" id="fotoNota" accept="image/*"><br><br>
+
+        <label>Pembayaran:</label><br>
+        <select id="pembayaran" required>
+            <option value="">Pilih</option>
+            <option value="Cash">Cash</option>
+            <option value="Transfer">Transfer</option>
+        </select><br><br>
+
+        <label>Bukti Transfer (Kalau Transfer):</label><br>
+        <input type="file" id="buktiTransfer" accept="image/*"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
