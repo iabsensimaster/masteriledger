@@ -40,3 +40,29 @@
     <script src="app.js"></script>
 </body>
 </html>
+<form id="formLedger" onsubmit="event.preventDefault(); submitForm()">
+  <input id="nama" placeholder="Nama" required><br>
+  <input id="uraian" placeholder="Uraian" required><br>
+  <input id="pos" placeholder="Pos" readonly><br>
+  <input id="nominal" placeholder="Nominal" required><br>
+
+  <input type="file" id="fotoNota" required><br>
+
+  <select id="pembayaran" onchange="toggleBukti()">
+    <option value="Cash">Cash</option>
+    <option value="Transfer">Transfer</option>
+  </select><br>
+
+  <div id="buktiTransferDiv" style="display:none">
+    <input type="file" id="buktiTransfer"><br>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function toggleBukti() {
+  const pembayaran = document.getElementById('pembayaran').value
+  document.getElementById('buktiTransferDiv').style.display = pembayaran === 'Transfer' ? 'block' : 'none'
+}
+</script>
